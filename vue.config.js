@@ -1,4 +1,12 @@
 module.exports = {
+  publicPath: "./",
+  pages: {
+    index: {
+      entry: "src/main.js",
+      title: "Futo Nakajima's Portfolio",
+    }
+  },
+
   chainWebpack: (config) => {
     const svgRule = config.module.rule('svg');
 
@@ -11,5 +19,4 @@ module.exports = {
       .use('vue-svg-loader')
       .loader('vue-svg-loader');
   },
-  publicPath: "./"
 };
