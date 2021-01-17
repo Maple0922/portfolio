@@ -137,7 +137,8 @@ export default {
       &__icon {
         margin-right: 14px;
         display: inline-block;
-        min-width: 50px;
+        width: 20px;
+        height: 20px;
       }
 
       &__text {
