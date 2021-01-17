@@ -137,8 +137,15 @@ export default {
       &__icon {
         margin-right: 14px;
         display: inline-block;
+        min-width: 20px;
         width: 20px;
-        height: 20px;
+        opacity: 0.2;
+        @include mq("pc") {
+          height: 23px;
+        }
+        @include mq("sp") {
+          height: 20px;
+        }
       }
 
       &__text {

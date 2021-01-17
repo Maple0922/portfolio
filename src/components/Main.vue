@@ -26,6 +26,7 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/import";
+@import "@/assets/scss/reset";
 
 .main {
   height: 200vh;
@@ -51,7 +52,7 @@ export default {
       align-items: baseline;
 
       @include mq("pc") {
-        margin-bottom: 80px;
+        margin-bottom: 50px;
       }
 
       @include mq("sp") {
@@ -61,6 +62,7 @@ export default {
       &--ja {
         &::before {
           margin-right: 6px;
+          margin-left: 6px;
           content: "−";
         }
       }
@@ -71,11 +73,11 @@ export default {
 
       @include mq("pc") {
         &--en {
-          font-size: 28px;
+          font-size: 30px;
         }
 
         &--ja {
-          font-size: 16px;
+          font-size: 15px;
         }
       }
 
