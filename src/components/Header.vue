@@ -20,7 +20,7 @@ export default {
   position: relative;
   width: 100%;
   color: $header-text;
-  background: url("../assets/images/header.jpg");
+  background: url("../assets/images/photo/header.jpg");
   background-position: center 0%;
   background-size: cover;
 

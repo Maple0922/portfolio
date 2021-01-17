@@ -13,7 +13,9 @@
           :key="key"
         >
           <component class="profile__list__item__icon" :is="profile.icon" />
-          <p class="profile__list__item__text">{{ profile.text }}</p>
+          <p class="profile__list__item__text" :class="profile.name">
+            {{ profile.text }}
+          </p>
         </li>
       </ul>
     </div>
@@ -21,11 +23,12 @@
 </template>
 
 <script>
-import ProfileImage from "@/assets/images/profile.jpg";
-import UserSvg from "@/assets/images/user.svg";
-import PinSvg from "@/assets/images/pin.svg";
-import UnivSvg from "@/assets/images/univ.svg";
-import CommentSvg from "@/assets/images/comment.svg";
+import ProfileImage from "@/assets/images/photo/profile.jpg";
+import UserSvg from "@/assets/images/svg/user.svg";
+import CalendarSvg from "@/assets/images/svg/calendar.svg";
+import PinSvg from "@/assets/images/svg/pin.svg";
+import UnivSvg from "@/assets/images/svg/univ.svg";
+import CommentSvg from "@/assets/images/svg/comment.svg";
 
 export default {
   name: "Profile",
@@ -38,6 +41,11 @@ export default {
           name: "user",
           icon: "UserSvg",
           text: "中島楓人(なかじまふうと)",
+        },
+        {
+          name: "calendar",
+          icon: "CalendarSvg",
+          text: "1999年9月22日生まれ(21歳)",
         },
         {
           name: "pin",
@@ -53,7 +61,7 @@ export default {
           name: "comment",
           icon: "CommentSvg",
           text:
-            "Webエンジニアを目指している大学生です。身の回りの課題解決･効率化が大好きです。\n主にやっているのはフロントですが、課題解決のために必要な技術を考え学んでいます。\n大学では軽音サークルに入り、趣味でギター、ベースを弾いています。",
+            "Webエンジニアを目指している大学生です。身の回りの課題解決･効率化をするWebアプリを開発することが好きです。\n主にやっているのはフロントですが、課題解決のために必要な技術を考え学んでいます。\n大学では軽音サークルに入り、趣味でギター、ベースを弾いています。\n",
         },
       ],
     };
@@ -67,6 +75,7 @@ export default {
 
   components: {
     UserSvg,
+    CalendarSvg,
     PinSvg,
     UnivSvg,
     CommentSvg,
@@ -132,12 +141,15 @@ export default {
       }
 
       &__text {
+        &.comment {
+          white-space: pre-line;
+        }
         @include mq("pc") {
-          font-size: 16px;
+          font-size: 15px;
         }
 
         @include mq("sp") {
-          font-size: 14px;
+          font-size: 13px;
         }
       }
     }
