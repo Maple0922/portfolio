@@ -10,6 +10,23 @@
 <script>
 export default {
   name: "Portfolio",
+
+  data() {
+    return {
+      portfolio: {
+        practical: [
+          {
+            title: "as",
+            description: "te",
+          },
+          {
+            title: "as",
+            description: "te",
+          },
+        ],
+      },
+    };
+  },
 };
 </script>
 

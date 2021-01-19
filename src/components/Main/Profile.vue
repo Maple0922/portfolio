@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import ProfileImage from "@/assets/images/photo/profile.jpg";
+import ProfileImage from "@/assets/images/photo/profile2.jpg";
 import UserSvg from "@/assets/images/svg/user.svg";
 import CalendarSvg from "@/assets/images/svg/calendar.svg";
 import PinSvg from "@/assets/images/svg/pin.svg";
@@ -40,12 +40,12 @@ export default {
         {
           name: "user",
           icon: "UserSvg",
-          text: "中島楓人 (なかじまふうと)",
+          text: "中島楓人",
         },
         {
           name: "calendar",
           icon: "CalendarSvg",
-          text: `1999年9月22日生まれ (${this.calcAge()}歳)`,
+          text: `1999年生まれ (${this.calcAge()}歳)`,
         },
         {
           name: "pin",
@@ -61,7 +61,7 @@ export default {
           name: "comment",
           icon: "CommentSvg",
           text:
-            "Webエンジニアを目指している大学生です。身の回りの課題解決･効率化をするWebアプリを開発することが好きです。\n主にやっているのはフロントですが、課題解決のために必要な技術を考え学んでいます。\n大学では軽音サークルに入り、趣味でギター、ベースを弾いています。\n",
+            "Webエンジニアを目指している大学生です。身の回りの課題解決･効率化をするWebアプリを開発することが好きです。\n主にやっているのはフロントですが、課題解決のために必要な技術を考え学んでいます。\n大学では軽音サークルに入っており、趣味でギター、ベースを弾いています。\n",
         },
       ],
     };
@@ -138,6 +138,7 @@ export default {
       max-width: 240px;
       height: 24vw;
       max-height: 240px;
+      margin-right: 16px;
     }
 
     @include mq("sp") {
@@ -158,6 +159,7 @@ export default {
 
     &__item {
       display: flex;
+      align-items: top;
 
       &:not(:last-child) {
         margin-bottom: 16px;
@@ -167,13 +169,14 @@ export default {
         margin-right: 14px;
         display: inline-block;
         min-width: 20px;
-        width: 20px;
         opacity: 0.2;
+        vertical-align: bottom;
         @include mq("pc") {
-          height: 23px;
+          margin-top: 2px;
+          height: 20px;
         }
         @include mq("sp") {
-          height: 20px;
+          height: 14px;
         }
       }
 
