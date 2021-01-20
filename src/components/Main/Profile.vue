@@ -68,10 +68,6 @@ export default {
   },
 
   methods: {
-    makeSvgUrl(name) {
-      return "../../assets/images/" + name + ".svg";
-    },
-
     calcAge() {
       const myBirthDay = {
         year: 1999,

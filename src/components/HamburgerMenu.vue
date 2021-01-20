@@ -20,7 +20,7 @@
           rel="noreferrer"
           target="_blank"
         >
-          <img class="sns__icon twitter" alt="twitter" src="" />
+          <component class="sns__icon twitter" :is="'TwitterSvg'" />
         </a>
         <a
           class="sns__link"
@@ -28,7 +28,7 @@
           rel="noreferrer"
           target="_blank"
         >
-          <img class="sns__icon github" alt="github" src="" />
+          <component class="sns__icon github" :is="'GithubSvg'" />
         </a>
       </div>
     </div>
@@ -37,8 +37,11 @@
 
 <script>
 import Vue from "vue";
-import vueSmoothScroll from "vue-smooth-scroll";
-Vue.use(vueSmoothScroll);
+import VueSmoothScroll from "vue-smooth-scroll";
+import TwitterSvg from "@/assets/images/svg/twitter.svg";
+import GithubSvg from "@/assets/images/svg/github.svg";
+Vue.use(VueSmoothScroll);
+
 export default {
   name: "HamburgerMenu",
   data() {
@@ -70,6 +73,11 @@ export default {
   },
   props: {
     isActive: Boolean,
+  },
+
+  components: {
+    TwitterSvg,
+    GithubSvg,
   },
 };
 </script>
@@ -156,8 +164,15 @@ export default {
     width: 240px;
     margin: 0 auto;
 
-    .twitter,
-    .github {
+    &__link {
+      transition: 0.2s;
+
+      &:hover {
+        color: blue;
+      }
+    }
+
+    &__icon {
       @include mq("pc") {
         width: 48px;
         height: 48px;
