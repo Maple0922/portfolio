@@ -50,6 +50,14 @@ export default {
     &__title {
       display: flex;
       align-items: baseline;
+      transform: translateY(30px);
+      opacity: 0;
+      transition: 1s;
+
+      &.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
 
       @include mq("pc") {
         margin-bottom: 50px;

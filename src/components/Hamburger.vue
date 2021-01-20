@@ -34,6 +34,13 @@ export default {
   cursor: pointer;
   background: $transparent-black;
   border-radius: 4px;
+  transition: 0.3s;
+
+  @include mq("pc") {
+    &:hover {
+      background: $transparent-black-hover;
+    }
+  }
 
   .bar {
     position: relative;

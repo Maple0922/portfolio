@@ -1,6 +1,6 @@
 <template>
   <section class="main__container skills" id="skills">
-    <h2 class="main__container__title">
+    <h2 class="main__container__title" :class="{ show: show }">
       <p class="main__container__title--en">Skills</p>
       <p class="main__container__title--ja">スキル</p>
     </h2>
@@ -24,6 +24,7 @@ export default {
   name: "Skills",
   data() {
     return {
+      show: false,
       skills: [
         {
           category: "言語",
@@ -157,6 +158,20 @@ export default {
         },
       ],
     };
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      if (!this.show) {
+        var top = this.$el.getBoundingClientRect().top;
+        this.show = top < window.innerHeight - 100;
+      }
+    },
   },
 };
 </script>

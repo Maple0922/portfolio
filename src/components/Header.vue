@@ -1,8 +1,12 @@
 <template>
   <header class="header">
     <div class="header__container">
-      <h1 class="header__title">Futo Nakajima's Portfolio</h1>
-      <p class="header__caption">- Web Engineer -</p>
+      <h1 class="header__title" :class="{ show: showTitle }">
+        Futo Nakajima's Portfolio
+      </h1>
+      <p class="header__caption" :class="{ show: showCaption }">
+        - Web Engineer -
+      </p>
     </div>
   </header>
 </template>
@@ -10,6 +14,20 @@
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+      showTitle: false,
+      showCaption: false,
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.showTitle = true;
+      setTimeout(() => {
+        this.showCaption = true;
+      }, 300);
+    }, 500);
+  },
 };
 </script>
 
@@ -45,6 +63,18 @@ export default {
     font-weight: 300;
     color: $caption-text;
     text-align: center;
+  }
+
+  &__title,
+  &__caption {
+    transition: 1s;
+    transform: translateY(30px);
+    opacity: 0;
+
+    &.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   @include mq-header("sp") {

@@ -1,6 +1,6 @@
 <template>
   <section class="main__container profile" id="profile">
-    <h2 class="main__container__title">
+    <h2 class="main__container__title" :class="{ show: show }">
       <p class="main__container__title--en">Profile</p>
       <p class="main__container__title--ja">プロフィール</p>
     </h2>
@@ -35,6 +35,7 @@ export default {
 
   data() {
     return {
+      show: false,
       profileImage: ProfileImage,
       profiles: [
         {
@@ -67,7 +68,20 @@ export default {
     };
   },
 
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+
   methods: {
+    handleScroll() {
+      if (!this.show) {
+        var top = this.$el.getBoundingClientRect().top;
+        this.show = top < window.innerHeight - 100;
+      }
+    },
     calcAge() {
       const myBirthDay = {
         year: 1999,
