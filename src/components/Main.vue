@@ -29,7 +29,7 @@ export default {
 @import "@/assets/scss/reset";
 
 .main {
-  height: 200vh;
+  height: 500vh;
   line-height: 1.8;
   background: $main-background;
   text-align: left;
@@ -38,6 +38,15 @@ export default {
     width: 84%;
     max-width: 1000px;
     margin: 0 auto 50px;
+
+    transform: translateY(30px);
+    opacity: 0;
+    transition: 1s;
+
+    &.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
 
     @include mq("pc") {
       padding-top: 80px;
@@ -50,14 +59,6 @@ export default {
     &__title {
       display: flex;
       align-items: baseline;
-      transform: translateY(30px);
-      opacity: 0;
-      transition: 1s;
-
-      &.show {
-        transform: translateY(0);
-        opacity: 1;
-      }
 
       @include mq("pc") {
         margin-bottom: 50px;

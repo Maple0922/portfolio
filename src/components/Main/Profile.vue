@@ -148,7 +148,7 @@ export default {
       max-width: 240px;
       height: 24vw;
       max-height: 240px;
-      margin-right: 16px;
+      margin-right: 36px;
     }
 
     @include mq("sp") {
@@ -179,7 +179,7 @@ export default {
         margin-right: 14px;
         display: inline-block;
         min-width: 20px;
-        opacity: 0.5;
+        opacity: 1;
         vertical-align: bottom;
         margin-top: 3px;
         @include mq("pc") {
