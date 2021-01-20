@@ -1,7 +1,6 @@
 <template>
   <transition>
     <div class="hamburger-menu" v-if="isActive">
-      <p>{{ isActive }}</p>
       <ul class="menu">
         <li class="menu__item" v-for="(menu, key) in menus" :key="key">
           <a
