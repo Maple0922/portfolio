@@ -28,7 +28,7 @@
           rel="noreferrer"
           target="_blank"
         >
-          <component class="sns__icon github" :is="'GithubSvg'" />
+          <component class="sns__icon github" :is="'GithubWhiteSvg'" />
         </a>
       </div>
     </div>
@@ -39,7 +39,7 @@
 import Vue from "vue";
 import VueSmoothScroll from "vue-smooth-scroll";
 // import TwitterSvg from "@/assets/images/svg/twitter.svg";
-import GithubSvg from "@/assets/images/svg/github.svg";
+import GithubWhiteSvg from "@/assets/images/svg/github_white.svg";
 Vue.use(VueSmoothScroll);
 
 export default {
@@ -77,7 +77,7 @@ export default {
 
   components: {
     // TwitterSvg,
-    GithubSvg,
+    GithubWhiteSvg,
   },
 };
 </script>
@@ -176,13 +176,13 @@ export default {
 
     &__icon {
       @include mq("pc") {
-        width: 48px;
-        height: 48px;
+        width: 64px;
+        height: 64px;
       }
 
       @include mq("sp") {
-        width: 32px;
-        height: 32px;
+        width: 48px;
+        height: 48px;
       }
     }
   }

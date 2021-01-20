@@ -170,6 +170,11 @@ export default {
     &__item {
       display: flex;
       align-items: top;
+      @include mq("sp") {
+        max-width: 400px;
+        margin-right: auto;
+        margin-left: auto;
+      }
 
       &:not(:last-child) {
         margin-bottom: 16px;

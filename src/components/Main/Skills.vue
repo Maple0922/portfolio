@@ -244,14 +244,20 @@ export default {
     @include mq("sp") {
       width: 100%;
       margin-bottom: 30px;
+      max-width: 400px;
     }
   }
 
   &__category {
     display: block;
-    font-size: 18px;
     margin-bottom: 16px;
     margin-left: 8px;
+    @include mq("pc") {
+      font-size: 18px;
+    }
+    @include mq("sp") {
+      font-size: 16px;
+    }
   }
 
   &__list {

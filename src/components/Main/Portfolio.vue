@@ -17,7 +17,7 @@
       >
         <img
           class="portfolio__image"
-          :src="require(`@/assets/images/photo/${item.image}.jpg`)"
+          :src="require(`@/assets/images/photo/${item.image}`)"
           :alt="item.image"
         />
         <div class="portfolio__description">
@@ -75,22 +75,27 @@ export default {
       portfolio: {
         personal: [
           {
-            title: "as",
-            description: "te",
-            used: ["tes", "tea", "ted"],
-            image: "profile",
+            title: "ポートフォリオサイト",
+            description: "自分のポートフォリオサイトです。",
+            used: ["Vue.js"],
+            image: "portfolio.png",
+            github: "portfolio",
           },
           {
-            title: "aws",
-            description: "teaa",
-            used: ["tefas", "taea", "teafd"],
-            image: "profile2",
+            title: "BUYO - 部室予約サイト",
+            description:
+              "自分の所属しているサークルで使う部室の利用時間予約サイトです。",
+            used: ["PHP", "SQLite"],
+            image: "buyo.png",
+            github: "ksre2",
           },
           {
-            title: "aas",
-            description: "teh",
-            used: ["tedfgds", "theda", "tehd"],
-            image: "profile",
+            title: "TIME TABLE MAKER",
+            description:
+              "所属しているサークルのライブのタイムテーブルの作成し、時間を可視化できるサイトです。",
+            used: ["jQuery"],
+            image: "timetablemaker.png",
+            github: "time-table-maker",
           },
         ],
         practical: [
@@ -99,18 +104,21 @@ export default {
             description: "te",
             used: ["tes", "tea", "ted"],
             image: "profile",
+            github: "",
           },
           {
             title: "aws",
             description: "teaa",
             used: ["tefas", "taea", "teafd"],
             image: "profile2",
+            github: "",
           },
           {
             title: "aas",
             description: "teh",
             used: ["tedfgds", "theda", "tehd"],
             image: "profile",
+            github: "",
           },
         ],
       },
@@ -137,52 +145,98 @@ export default {
 @import "@/assets/scss/import";
 
 .main__container__subtitle {
-  font-size: 22px;
-  padding-left: 20px;
   width: 100%;
+  text-align: center;
   padding-bottom: 4px;
-  margin-bottom: 16px;
+  @include mq("pc") {
+    margin-bottom: 32px;
+    font-size: 22px;
+  }
+  @include mq("sp") {
+    margin-bottom: 20px;
+    font-size: 17px;
+  }
 }
 
 .portfolio {
   &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    @include mq("pc") {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
   &__container {
-    width: calc(33.3% - 30px);
     background: transparentize($white, 0.4);
     border-radius: 4px;
     box-shadow: 0 1px 3px 0px $light-gray;
     height: 400px;
-    margin: 0 15px 80px;
+    cursor: pointer;
+    @include mq("pc") {
+      width: calc(33.3% - 30px);
+      transition: 0.3s;
+      margin: 0 15px 30px;
+      &:hover {
+        opacity: 0.6;
+        transform: scale(1.03);
+      }
+      &:last-child {
+        margin-bottom: 80px;
+      }
+    }
+    @include mq("tab") {
+      width: calc(50% - 30px);
+    }
+    @include mq("sp") {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 30px;
+    }
   }
 
   &__image {
-    height: 240px;
+    height: 200px;
     object-fit: cover;
     width: 100%;
     border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid $light-gray;
   }
 
   &__description {
-    padding: 0 20px 20px;
+    padding-bottom: 20px;
     &__title {
       font-size: 18px;
       font-weight: bold;
+      margin-bottom: 10px;
+      padding: 0 20px;
     }
     &__content {
       display: block;
+      padding: 0 10px 10px;
+      margin: 0 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid $light-gray;
+      @include mq("pc") {
+        font-size: 14px;
+      }
+      @include mq("sp") {
+        font-size: 14px;
+      }
     }
     &__used {
-      font-size: 14px;
+      padding: 0 20px;
+      @include mq("pc") {
+        font-size: 14px;
+      }
+      @include mq("sp") {
+        font-size: 12px;
+      }
 
       &__item {
         display: inline-block;
         margin: 0 4px;
         padding: 2px 6px;
-        background: $light-gray;
+        background: $super-light-gray;
         border-radius: 4px;
         text-align: center;
       }
