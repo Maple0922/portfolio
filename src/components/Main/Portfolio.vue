@@ -44,7 +44,7 @@
       >
         <img
           class="portfolio__image"
-          :src="require(`@/assets/images/photo/${item.image}.jpg`)"
+          :src="require(`@/assets/images/photo/${item.image}`)"
           :alt="item.image"
         />
         <div class="portfolio__description">
@@ -94,30 +94,72 @@ export default {
             description:
               "所属しているサークルのライブのタイムテーブルの作成し、時間を可視化できるサイトです。",
             used: ["jQuery"],
-            image: "timetablemaker.png",
+            image: "time-table-maker.png",
             github: "time-table-maker",
+          },
+          {
+            title: "Image PDF Converter",
+            description: "画像をPDFに変換できるサイトです。",
+            used: ["PDFMake(ライブラリ)"],
+            image: "image-pdf-converter.png",
+            github: "image-pdf-converter",
+          },
+          {
+            title: "oh-o!Meiji サーバーエラーbot",
+            description:
+              "大学のポータルサイトがエラーを起こした際にツイートでお知らせしてくれるbotです。",
+            used: ["PHP", "cron"],
+            image: "cat.jpg",
+            github: "time-table-maker",
+          },
+          {
+            title: "Gamble Calculator",
+            description:
+              "友達と賭けでゲームをするときにポイント計算を効率よく行えるツールです。",
+            used: ["Vue.js"],
+            image: "vue-gamble-calculator.png",
+            github: "vue-gamble-calculator",
           },
         ],
         practical: [
           {
-            title: "as",
-            description: "te",
-            used: ["tes", "tea", "ted"],
-            image: "profile",
+            title: "toCサービスのLPコーディング",
+            description:
+              "デザインカンプを元に1枚のLPのコーディング、レスポンシブ対応を行いました。",
+            used: ["Sass", "jQuery"],
+            image: "cat.jpg",
             github: "",
           },
           {
-            title: "aws",
-            description: "teaa",
-            used: ["tefas", "taea", "teafd"],
-            image: "profile2",
+            title: "社内ブログの枠組み実装",
+            description:
+              "社内の技術ブログの枠組みを、hugoという静的サイトジェネレータのテーマをカスタマイズして作りました。",
+            used: ["hugo"],
+            image: "cat.jpg",
             github: "",
           },
           {
-            title: "aas",
-            description: "teh",
-            used: ["tedfgds", "theda", "tehd"],
-            image: "profile",
+            title: "モバイルオーダーシステムのフロントエンド開発",
+            description:
+              "フロントにAngularを用いたスマホ向けのシステムの実装、APIとの繋ぎ込みを行いました。",
+            used: ["Angular"],
+            image: "cat.jpg",
+            github: "",
+          },
+          {
+            title: "新卒向け就活サービスの開発",
+            description:
+              "LPのコーディングからLaravelを用いた就活サービスの開発まで行いました。",
+            used: ["Laravel"],
+            image: "cat.jpg",
+            github: "",
+          },
+          {
+            title: "大会運営者支援システムの開発",
+            description:
+              "トーナメント表の出力を始めとした、大会運営者向けの業務システムの開発を行いました。",
+            used: ["Laravel"],
+            image: "cat.jpg",
             github: "",
           },
         ],
@@ -170,7 +212,7 @@ export default {
     background: transparentize($white, 0.4);
     border-radius: 4px;
     box-shadow: 0 1px 3px 0px $light-gray;
-    height: 400px;
+    height: 440px;
     cursor: pointer;
     @include mq("pc") {
       width: calc(33.3% - 30px);
@@ -195,11 +237,11 @@ export default {
   }
 
   &__image {
-    height: 200px;
+    height: 240px;
     object-fit: cover;
     width: 100%;
     border-radius: 4px 4px 0 0;
-    border-bottom: 1px solid $light-gray;
+    border-bottom: 1px solid $super-light-gray;
   }
 
   &__description {
