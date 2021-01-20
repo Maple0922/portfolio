@@ -4,7 +4,11 @@
       <p>{{ isActive }}</p>
       <ul class="menu">
         <li class="menu__item" v-for="(menu, key) in menus" :key="key">
-          <a :href="'#' + menu.enName.toLowerCase()" @click="close">
+          <a
+            :href="'#' + menu.enName.toLowerCase()"
+            @click="close"
+            v-smooth-scroll
+          >
             <h4 class="menu__title">{{ menu.enName }}</h4>
             <p class="menu__description">{{ menu.jaName }}</p>
           </a>
@@ -33,6 +37,9 @@
 </template>
 
 <script>
+import Vue from "vue";
+import vueSmoothScroll from "vue-smooth-scroll";
+Vue.use(vueSmoothScroll);
 export default {
   name: "HamburgerMenu",
   data() {
