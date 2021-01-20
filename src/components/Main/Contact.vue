@@ -1,6 +1,6 @@
 <template>
-  <section class="main__container contact" id="contact">
-    <h2 class="main__container__title" :class="{ show: show }">
+  <section class="main__container contact" id="contact" :class="{ show: show }">
+    <h2 class="main__container__title">
       <p class="main__container__title--en">Contact</p>
       <p class="main__container__title--ja">お問い合わせ</p>
     </h2>
@@ -25,7 +25,7 @@ export default {
     handleScroll() {
       if (!this.show) {
         var top = this.$el.getBoundingClientRect().top;
-        this.show = top < window.innerHeight - 100;
+        this.show = top < window.innerHeight - 300;
       }
     },
   },
