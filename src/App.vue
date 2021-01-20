@@ -2,19 +2,29 @@
   <div id="app">
     <Header />
     <Main />
-    <!-- <Hamburger /> -->
+    <Hamburger :isActive="isActiveMenu" />
+    <HamburgerMenu :isActive="isActiveMenu" />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
 import Main from "./components/Main.vue";
+import Hamburger from "./components/Hamburger.vue";
+import HamburgerMenu from "./components/HamburgerMenu.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      isActiveMenu: false,
+    };
+  },
   components: {
     Header,
     Main,
+    Hamburger,
+    HamburgerMenu,
   },
 };
 </script>
