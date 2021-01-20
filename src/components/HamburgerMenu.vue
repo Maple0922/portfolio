@@ -97,6 +97,7 @@ export default {
   padding: 90px 0;
   color: $white;
   background: #111111f3;
+  text-align: left;
 
   .menu {
     width: 240px;
