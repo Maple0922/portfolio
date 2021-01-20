@@ -1,6 +1,6 @@
 <template>
-  <section class="main__container profile" id="profile">
-    <h2 class="main__container__title" :class="{ show: show }">
+  <section class="main__container profile" id="profile" :class="{ show: show }">
+    <h2 class="main__container__title">
       <p class="main__container__title--en">Profile</p>
       <p class="main__container__title--ja">プロフィール</p>
     </h2>
@@ -79,7 +79,7 @@ export default {
     handleScroll() {
       if (!this.show) {
         var top = this.$el.getBoundingClientRect().top;
-        this.show = top < window.innerHeight - 100;
+        this.show = top < window.innerHeight - 300;
       }
     },
     calcAge() {
@@ -179,10 +179,10 @@ export default {
         margin-right: 14px;
         display: inline-block;
         min-width: 20px;
-        opacity: 0.2;
+        opacity: 0.5;
         vertical-align: bottom;
+        margin-top: 3px;
         @include mq("pc") {
-          margin-top: 2px;
           height: 20px;
         }
         @include mq("sp") {
