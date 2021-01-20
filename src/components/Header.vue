@@ -7,17 +7,46 @@
       <p class="header__caption" :class="{ show: showCaption }">
         - Web Engineer -
       </p>
+      <div class="header__links" :class="{ show: showLinks }">
+        <a
+          class="header__link"
+          v-for="(link, key) in links"
+          :key="key"
+          :href="'#' + link.name.toLowerCase()"
+          v-smooth-scroll
+          >{{ link.name }}</a
+        >
+      </div>
     </div>
   </header>
 </template>
 
 <script>
+import Vue from "vue";
+import VueSmoothScroll from "vue-smooth-scroll";
+Vue.use(VueSmoothScroll);
+
 export default {
   name: "Header",
   data() {
     return {
       showTitle: false,
       showCaption: false,
+      showLinks: false,
+      links: [
+        {
+          name: "Profile",
+        },
+        {
+          name: "Skills",
+        },
+        {
+          name: "Portfolio",
+        },
+        {
+          name: "Contact",
+        },
+      ],
     };
   },
   mounted() {
@@ -25,6 +54,9 @@ export default {
       this.showTitle = true;
       setTimeout(() => {
         this.showCaption = true;
+        setTimeout(() => {
+          this.showLinks = true;
+        }, 300);
       }, 300);
     }, 500);
   },
@@ -65,8 +97,21 @@ export default {
     text-align: center;
   }
 
+  &__link {
+    color: $link-text;
+    text-decoration: underline;
+    display: inline-block;
+    transition: 0.3s;
+    @include mq("pc") {
+      &:hover {
+        color: lighten($link-text, 16);
+      }
+    }
+  }
+
   &__title,
-  &__caption {
+  &__caption,
+  &__links {
     transition: 1s;
     transform: translateY(30px);
     opacity: 0;
@@ -85,7 +130,13 @@ export default {
     }
 
     &__caption {
-      font-size: 16px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    &__link {
+      font-size: 12px;
+      margin: 0 6px;
     }
   }
 
@@ -98,6 +149,12 @@ export default {
 
     &__caption {
       font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    &__link {
+      margin: 0 6px;
+      font-size: 16px;
     }
   }
 
@@ -109,7 +166,13 @@ export default {
     }
 
     &__caption {
-      font-size: 20px;
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
+
+    &__link {
+      font-size: 18px;
+      margin: 0 12px;
     }
   }
 }
