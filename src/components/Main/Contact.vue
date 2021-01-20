@@ -1,5 +1,5 @@
 <template>
-  <section class="main__container profile" id="profile">
+  <section class="main__container contact" id="contact">
     <h2 class="main__container__title">
       <p class="main__container__title--en">Contact</p>
       <p class="main__container__title--ja">お問い合わせ</p>
