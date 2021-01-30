@@ -2,7 +2,11 @@
   <main class="main">
     <Profile />
     <Skills />
-    <Portfolio />
+    <Portfolio @showMore="showMore" />
+    <PortfolioMoreDialog
+      :class="{ 'portfolio__dialog--show': showMoreDialog }"
+      :portfolioItem="showItem"
+    />
     <Contact />
   </main>
 </template>
@@ -11,14 +15,31 @@
 import Profile from "@/components/Main/Profile.vue";
 import Skills from "@/components/Main/Skills.vue";
 import Portfolio from "@/components/Main/Portfolio.vue";
+import PortfolioMoreDialog from "@/components/Main/PortfolioMoreDialog";
 import Contact from "@/components/Main/Contact.vue";
 
 export default {
   name: "Main",
+
+  data() {
+    return {
+      showItem: {},
+      showMoreDialog: false,
+    };
+  },
+
+  methods: {
+    showMore(clicked) {
+      this.showItem = clicked;
+      this.showMoreDialog = true;
+    },
+  },
+
   components: {
     Profile,
     Skills,
     Portfolio,
+    PortfolioMoreDialog,
     Contact,
   },
 };
