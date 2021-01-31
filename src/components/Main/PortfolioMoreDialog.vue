@@ -3,10 +3,18 @@
     <div class="portfolio__dialog__container">
       <div class="portfolio__dialog__top"></div>
       <p class="portfolio__dialog__title">{{ portfolioItem.title }}</p>
-      <p class="portfolio__dialog__description">
-        {{ portfolioItem.description }}
-        {{ portfolioItem.supplement }}
-      </p>
+      <div class="portfolio__dialog__content">
+        <p class="portfolio__dialog__content__description">
+          {{ portfolioItem.description }}
+        </p>
+        <p
+          class="portfolio__dialog__content__supplement"
+          v-for="(sup, key) in portfolioItem.supplement"
+          :key="key"
+        >
+          {{ sup }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -55,16 +63,42 @@ export default {
     border-radius: 4px;
 
     @include mq("pc") {
-      padding: 24px 16px;
+      padding: 16px 20px;
     }
     @include mq("sp") {
-      padding: 24px 16px;
+      padding: 12px 16px;
     }
   }
 
   &__title {
-    font-size: 20px;
     font-weight: bold;
+    @include mq("pc") {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    @include mq("sp") {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__content {
+    &__description {
+      @include mq("pc") {
+        font-size: 14px;
+      }
+      @include mq("sp") {
+        font-size: 10px;
+      }
+    }
+    &__supplement {
+      @include mq("pc") {
+        font-size: 14px;
+      }
+      @include mq("sp") {
+        font-size: 10px;
+      }
+    }
   }
 }
 </style>
