@@ -11,7 +11,7 @@
     <div class="portfolio__card__bottom">
       <h4 class="portfolio__card__title">{{ portfolioItem.title }}</h4>
       <span class="portfolio__card__date">{{ portfolioItem.date }}</span>
-      <p class="portfolio__card__description" v-if="sp">
+      <p class="portfolio__card__description" v-if="!sp">
         {{ portfolioItem.description }}
       </p>
       <hr class="portfolio__card__border" />
