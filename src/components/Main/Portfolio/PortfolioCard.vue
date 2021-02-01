@@ -61,13 +61,8 @@ export default {
 @import "@/assets/scss/import";
 
 .portfolio {
+  // responsive
   &__card {
-    background: transparentize($white, 0.4);
-    border-radius: 4px;
-    box-shadow: 0 1px 3px 0px $light-gray;
-    position: relative;
-    transition: 0.3s;
-    cursor: pointer;
     @include mq("pc") {
       height: 500px;
       width: calc(33.3% - 30px);
@@ -77,15 +72,116 @@ export default {
       }
     }
     @include mq("tab") {
-      width: calc(50% - 30px);
-      height: 500px;
+      width: calc(33.3% - 30px);
+      height: 400px;
     }
     @include mq("sp") {
       width: calc(50% - 24px);
       margin: 12px;
       height: 280px;
-      max-width: 200px;
     }
+
+    &__top {
+      @include mq("pc") {
+        height: 240px;
+      }
+      @include mq("tab") {
+        height: 180px;
+      }
+      @include mq("sp") {
+        height: 130px;
+      }
+    }
+    &__bottom {
+      @include mq("pc") {
+        padding: 16px 0;
+      }
+      @include mq("tab") {
+        padding: 12px 0;
+      }
+      @include mq("sp") {
+        padding: 8px 0;
+      }
+    }
+    &__title {
+      @include mq("pc") {
+        font-size: 18px;
+        padding: 0 20px;
+      }
+      @include mq("tab") {
+        padding: 0 16px;
+        font-size: 15px;
+      }
+      @include mq("sp") {
+        padding: 0 10px;
+        font-size: 13px;
+      }
+    }
+    &__date {
+      @include mq("pc") {
+        font-size: 14px;
+        padding-right: 24px;
+        margin-bottom: 6px;
+      }
+      @include mq("tab") {
+        font-size: 12px;
+        padding-right: 16px;
+        margin-bottom: 6px;
+      }
+      @include mq("sp") {
+        font-size: 10px;
+        padding-right: 12px;
+        margin-bottom: 6px;
+      }
+    }
+    &__description {
+      @include mq("pc") {
+        font-size: 14px;
+        padding: 0 20px;
+      }
+      @include mq("tab") {
+        font-size: 12px;
+        padding: 0 12px;
+      }
+      @include mq("sp") {
+        font-size: 10px;
+      }
+    }
+    &__border {
+      @include mq("pc") {
+        margin: 0 16px 16px;
+      }
+
+      @include mq("tab") {
+        margin: 0 12px 8px;
+      }
+
+      @include mq("sp") {
+        margin: 0 8px 8px;
+      }
+    }
+    &__used {
+      @include mq("pc") {
+        padding: 0 20px;
+        font-size: 14px;
+      }
+      @include mq("tab") {
+        padding: 0 12px;
+        font-size: 12px;
+      }
+      @include mq("sp") {
+        padding: 0 10px;
+        font-size: 10px;
+      }
+    }
+  }
+  &__card {
+    background: transparentize($white, 0.4);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0px $light-gray;
+    position: relative;
+    transition: 0.3s;
+    cursor: pointer;
 
     &__shadow {
       position: absolute;
@@ -100,7 +196,7 @@ export default {
       font-size: 24px;
       opacity: 0;
       transition: 0.3s;
-      z-index: 1000;
+      z-index: -1000;
       color: $white;
       border-radius: 4px;
     }
@@ -110,12 +206,6 @@ export default {
       border-radius: 4px 4px 0 0;
       border-bottom: 1px solid $super-light-gray;
       overflow: hidden;
-      @include mq("pc") {
-        height: 240px;
-      }
-      @include mq("sp") {
-        height: 130px;
-      }
     }
 
     &__image {
@@ -125,79 +215,25 @@ export default {
       transition: 0.3s;
     }
 
-    &__bottom {
-      @include mq("pc") {
-        padding: 16px 0;
-      }
-      @include mq("sp") {
-        padding: 8px 0;
-      }
-    }
-
     &__title {
       font-weight: bold;
-      @include mq("pc") {
-        padding: 0 20px;
-        font-size: 18px;
-        margin-bottom: 6px;
-      }
-      @include mq("sp") {
-        padding: 0 10px;
-        font-size: 13px;
-      }
     }
 
     &__date {
-      color: $dark-gray;
+      color: $light-gray;
       display: inline-block;
       width: 100%;
       text-align: right;
       line-height: 0.5;
-      @include mq("pc") {
-        font-size: 14px;
-        padding-right: 24px;
-        margin-bottom: 6px;
-      }
-      @include mq("sp") {
-        font-size: 12px;
-        padding-right: 12px;
-        margin-bottom: 6px;
-      }
+      font-weight: bold;
     }
 
     &__description {
-      padding-bottom: 20px;
       display: block;
-      padding: 0 10px;
-      margin: 0 10px;
       margin-bottom: 10px;
-      @include mq("pc") {
-        font-size: 14px;
-      }
-      @include mq("sp") {
-        font-size: 12.8px;
-      }
-    }
-
-    &__border {
-      @include mq("pc") {
-        margin: 0 16px 16px;
-      }
-      @include mq("sp") {
-        margin: 0 8px 8px;
-      }
     }
 
     &__used {
-      @include mq("pc") {
-        padding: 0 20px;
-        font-size: 14px;
-      }
-      @include mq("sp") {
-        padding: 0 10px;
-        font-size: 10px;
-      }
-
       &__item {
         display: inline-block;
         margin: 0 2px;
@@ -211,6 +247,7 @@ export default {
       opacity: 0.6;
       .portfolio__card__shadow {
         opacity: 1;
+        z-index: 1000;
       }
       .portfolio__card__image {
         transform: scale(1.1);

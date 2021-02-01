@@ -65,9 +65,13 @@ export default {
       width: 84%;
       max-width: 1000px;
     }
+    @include mq("tab") {
+      width: 94%;
+      max-width: 840px;
+    }
     @include mq("sp") {
       width: 96%;
-      max-width: 400px;
+      max-width: 500px;
     }
 
     &.show {

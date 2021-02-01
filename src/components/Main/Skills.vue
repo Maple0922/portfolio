@@ -78,7 +78,7 @@ export default {
           ],
         },
         {
-          category: "フレームワーク",
+          category: "フレームワーク･ライブラリ等",
           items: [
             {
               name: "Sass(SCSS)",
@@ -92,17 +92,17 @@ export default {
             },
             {
               name: "Vue.js",
-              star: 2,
+              star: 3,
               ex: false,
             },
             {
               name: "Laravel",
-              star: 2,
+              star: 3,
               ex: true,
             },
             {
               name: "React",
-              star: 1,
+              star: 2,
               ex: false,
             },
             {
@@ -110,10 +110,15 @@ export default {
               star: 1,
               ex: true,
             },
+            {
+              name: "node.js",
+              star: 1,
+              ex: false,
+            },
           ],
         },
         {
-          category: "開発ツール等",
+          category: "開発ツール･DB等",
           items: [
             {
               name: "Git(Github)",
@@ -121,19 +126,9 @@ export default {
               ex: true,
             },
             {
-              name: "node.js",
-              star: 2,
-              ex: false,
-            },
-            {
               name: "Webpack",
               star: 2,
               ex: true,
-            },
-            {
-              name: "Gulp",
-              star: 2,
-              ex: false,
             },
             {
               name: "Wordpress",
@@ -158,7 +153,7 @@ export default {
           ],
         },
         {
-          category: "その他",
+          category: "その他ツール",
           items: [
             {
               name: "Figma",
@@ -244,7 +239,7 @@ export default {
     @include mq("sp") {
       width: 100%;
       margin-bottom: 30px;
-      max-width: 400px;
+      max-width: 320px;
     }
   }
 
@@ -264,7 +259,6 @@ export default {
     border-right: 1px solid $main-background;
     border-left: 1px solid $main-background;
     &__item {
-      padding: 10px 0;
       width: 100%;
       display: flex;
       align-items: center;
@@ -272,10 +266,12 @@ export default {
 
       @include mq("pc") {
         font-size: 15px;
+        padding: 10px 0;
       }
 
       @include mq("sp") {
-        font-size: 13px;
+        font-size: 12px;
+        padding: 8px 0;
       }
       &:nth-child(2n-1) {
         // background: $light-gray;
@@ -302,8 +298,14 @@ export default {
       &__star {
         display: inline-block;
         margin-right: 3px;
-        width: 18px;
-        height: 18px;
+        @include mq("pc") {
+          width: 18px;
+          height: 18px;
+        }
+        @include mq("sp") {
+          width: 16px;
+          height: 16px;
+        }
       }
     }
   }
