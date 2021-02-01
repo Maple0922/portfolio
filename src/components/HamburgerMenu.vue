@@ -149,6 +149,16 @@ export default {
       }
     }
 
+    @include mq("tab") {
+      &__title {
+        font-size: 24px;
+      }
+
+      &__description {
+        font-size: 14px;
+      }
+    }
+
     @include mq("sp") {
       &__title {
         font-size: 20px;
@@ -169,8 +179,10 @@ export default {
     &__link {
       transition: 0.3s;
 
-      &:hover {
-        opacity: 0.6;
+      @include mq("pc") {
+        &:hover {
+          opacity: 0.6;
+        }
       }
     }
 
