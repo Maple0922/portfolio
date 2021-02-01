@@ -1,9 +1,7 @@
 <template>
   <header class="header">
     <div class="header__container">
-      <h1 class="header__title" :class="{ show: showTitle }">
-        Futo Nakajima's Portfolio
-      </h1>
+      <h1 class="header__title" :class="{ show: showTitle }">Futo Nakajima</h1>
       <p class="header__caption" :class="{ show: showCaption }">
         - Web Engineer -
       </p>
@@ -70,7 +68,7 @@ export default {
   position: relative;
   width: 100%;
   color: $header-text;
-  background: url("../assets/images/photo/header.jpg");
+  background: url("../assets/images/photo/hd.png");
   background-position: center 0%;
   background-size: cover;
 

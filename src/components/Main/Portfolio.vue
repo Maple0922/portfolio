@@ -37,16 +37,18 @@ export default {
         personal: [
           {
             title: "ポートフォリオサイト",
+            date: "2021-1",
             description: "自分のポートフォリオサイトです。",
             supplement: [
               "Vue CLIで作りました。アニメーションに絶対jQueryを使わないよう意識しました。",
             ],
             used: ["Vue.js"],
-            image: "portfolio.png",
+            image: "pf.png",
             github: "portfolio",
           },
           {
             title: "BUYO - 部室予約サイト",
+            date: "2020-2",
             description:
               "自分の所属しているサークルで使っている部室の利用時間予約サイトです。",
             supplement: [
@@ -57,11 +59,12 @@ export default {
               "現在もサークル内で使われています。",
             ],
             used: ["PHP", "SQLite"],
-            image: "buyo.png",
+            image: "by.png",
             github: "ksre2",
           },
           {
             title: "TIME TABLE MAKER",
+            date: "2020-4",
             description:
               "所属しているサークルのライブのタイムテーブルの作成し、時間を可視化できるサイトです。",
             supplement: [
@@ -70,21 +73,23 @@ export default {
               "現在もサークル内で使われています。",
             ],
             used: ["jQuery"],
-            image: "time-table-maker.png",
+            image: "ttm.png",
             github: "time-table-maker",
           },
           {
             title: "Image PDF Converter",
+            date: "2020-4",
             description: "画像をPDFに変換できるサイトです。",
             supplement: [
               "大学のオンライン授業で「写真を撮ってPDFにして提出」という課題が増え、機械に弱い友達によく変換を頼まれていたので、1人でできるように作りました。",
             ],
             used: ["PDFMake(ライブラリ)"],
-            image: "image-pdf-converter.png",
+            image: "ipc.png",
             github: "image-pdf-converter",
           },
           {
             title: "oh-o!Meiji サーバーエラーbot",
+            date: "2020-5",
             description:
               "大学のポータルサイトがエラーを起こした際にツイートでお知らせしてくれるbotです。",
             supplement: [
@@ -93,11 +98,12 @@ export default {
               "このbotを作った直後にサーバーが強化され、全く落ちなくなりました。",
             ],
             used: ["PHP", "cron"],
-            image: "server-error-bot.png",
-            github: "time-table-maker",
+            image: "seb.png",
+            github: "detect-error-bot",
           },
           {
             title: "Gamble Calculator",
+            date: "2020-6",
             description:
               "友達と賭けでゲームをするときにポイント計算を効率よく行えるツールです。",
             supplement: [
@@ -106,61 +112,61 @@ export default {
               "Vueの双方向データバインディングを活かしたWebアプリを作りたくなって作りました。",
             ],
             used: ["Vue.js"],
-            image: "vue-gamble-calculator.png",
+            image: "vgc.png",
             github: "vue-gamble-calculator",
           },
         ],
         practical: [
           {
             title: "toCサービスのLPコーディング",
+            date: "2019-9",
             description:
               "デザインカンプを元に1枚のLPのコーディング、レスポンシブ対応を行いました。",
             supplement: [],
             used: ["Sass", "jQuery"],
-            image: "cat.jpg",
-            github: "",
+            image: "lp.png",
           },
           {
             title: "社内ブログの枠組み実装",
+            date: "2019-10",
             description:
               "社内の技術ブログの枠組みを、hugoという静的サイトジェネレータのテーマをカスタマイズして作りました。",
             supplement: [""],
             used: ["hugo"],
-            image: "cat.jpg",
-            github: "",
+            image: "bl.png",
           },
           {
             title: "モバイルオーダーシステムのフロントエンド開発",
+            date: "2020-1",
             description:
               "フロントにAngularを用いたシステムの実装、APIとの繋ぎ込みを行いました。",
             supplement: [
               "初のチーム開発、中規模アプリの開発で、GithubとSlackを軸にしたフルリモートでの開発をここで経験しました。",
             ],
             used: ["Angular"],
-            image: "cat.jpg",
-            github: "",
+            image: "mos.png",
           },
           {
             title: "新卒向け就活サービスの開発",
+            date: "2020-8",
             description:
               "LPのコーディングからLaravelを用いた就活サービスの開発まで行いました。",
             supplement: [
               "Laravelでの基本的なMVCやCRUDの実装はここで学びました。",
             ],
             used: ["Laravel"],
-            image: "cat.jpg",
-            github: "",
+            image: "tc.png",
           },
           {
             title: "大会運営者支援システムの開発",
+            date: "2020-11",
             description:
               "トーナメント表の出力を始めとした、大会運営者向けの業務システムの開発を行いました。",
             supplement: [
               "LaravelでCRUDやマルチログイン、その他外部ライブラリなどを用いて独自の機能の実装をしました。",
             ],
             used: ["Laravel"],
-            image: "cat.jpg",
-            github: "",
+            image: "tw.png",
           },
         ],
       },

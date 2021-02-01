@@ -47,7 +47,7 @@ export default {
   left: 0;
   background: #0009;
   opacity: 0;
-  transition: 0.3s;
+  transition: 0.2s;
   pointer-events: none;
 
   &--show {

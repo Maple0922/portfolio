@@ -27,13 +27,29 @@
 </template>
 
 <script>
+import isMobile from "ismobilejs";
+
 export default {
   name: "PortfolioCard",
+
+  data() {
+    return {
+      isMobile,
+    };
+  },
+
   props: ["portfolioItem"],
 
   methods: {
     showMore() {
       this.$emit("showMore", this.portfolioItem);
+    },
+  },
+
+  computed: {
+    sp: function () {
+      const userAgent = window.navigator;
+      return this.isMobile(userAgent).any;
     },
   },
 };
