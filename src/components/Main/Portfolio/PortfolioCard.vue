@@ -10,9 +10,11 @@
     </div>
     <div class="portfolio__card__bottom">
       <h4 class="portfolio__card__title">{{ portfolioItem.title }}</h4>
-      <p class="portfolio__card__description">
+      <span class="portfolio__card__date">{{ portfolioItem.date }}</span>
+      <p class="portfolio__card__description" v-if="sp">
         {{ portfolioItem.description }}
       </p>
+      <hr class="portfolio__card__border" />
       <p class="portfolio__card__used">
         使用技術:
         <span
@@ -79,10 +81,10 @@ export default {
       height: 500px;
     }
     @include mq("sp") {
-      width: 100%;
-      max-width: 400px;
-      margin: 0 auto 30px;
-      height: 460px;
+      width: calc(50% - 24px);
+      margin: 12px;
+      height: 280px;
+      max-width: 200px;
     }
 
     &__shadow {
@@ -104,38 +106,71 @@ export default {
     }
 
     &__top {
-      height: 240px;
       width: 100%;
       border-radius: 4px 4px 0 0;
       border-bottom: 1px solid $super-light-gray;
       overflow: hidden;
+      @include mq("pc") {
+        height: 240px;
+      }
+      @include mq("sp") {
+        height: 130px;
+      }
     }
 
     &__image {
-      height: 240px;
+      height: 100%;
       width: 100%;
       object-fit: cover;
       transition: 0.3s;
     }
 
     &__bottom {
-      padding: 16px 0;
+      @include mq("pc") {
+        padding: 16px 0;
+      }
+      @include mq("sp") {
+        padding: 8px 0;
+      }
     }
 
     &__title {
-      font-size: 18px;
       font-weight: bold;
-      margin-bottom: 10px;
-      padding: 0 20px;
+      @include mq("pc") {
+        padding: 0 20px;
+        font-size: 18px;
+        margin-bottom: 6px;
+      }
+      @include mq("sp") {
+        padding: 0 10px;
+        font-size: 13px;
+      }
+    }
+
+    &__date {
+      color: $dark-gray;
+      display: inline-block;
+      width: 100%;
+      text-align: right;
+      line-height: 0.5;
+      @include mq("pc") {
+        font-size: 14px;
+        padding-right: 24px;
+        margin-bottom: 6px;
+      }
+      @include mq("sp") {
+        font-size: 12px;
+        padding-right: 12px;
+        margin-bottom: 6px;
+      }
     }
 
     &__description {
       padding-bottom: 20px;
       display: block;
-      padding: 0 10px 10px;
+      padding: 0 10px;
       margin: 0 10px;
       margin-bottom: 10px;
-      border-bottom: 1px solid $light-gray;
       @include mq("pc") {
         font-size: 14px;
       }
@@ -144,21 +179,31 @@ export default {
       }
     }
 
-    &__used {
-      padding: 0 20px;
+    &__border {
       @include mq("pc") {
+        margin: 0 16px 16px;
+      }
+      @include mq("sp") {
+        margin: 0 8px 8px;
+      }
+    }
+
+    &__used {
+      @include mq("pc") {
+        padding: 0 20px;
         font-size: 14px;
       }
       @include mq("sp") {
-        font-size: 12px;
+        padding: 0 10px;
+        font-size: 10px;
       }
 
       &__item {
         display: inline-block;
-        margin: 0 4px;
-        padding: 2px 6px;
+        margin: 0 2px;
+        padding: 0 4px;
         background: $super-light-gray;
-        border-radius: 4px;
+        border-radius: 3px;
         text-align: center;
       }
     }

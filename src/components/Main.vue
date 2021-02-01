@@ -56,13 +56,19 @@ export default {
   text-align: left;
 
   &__container {
-    width: 84%;
-    max-width: 1000px;
     margin: 0 auto 50px;
-
     transform: translateY(30px);
     opacity: 0;
     transition: 1s;
+
+    @include mq("pc") {
+      width: 84%;
+      max-width: 1000px;
+    }
+    @include mq("sp") {
+      width: 96%;
+      max-width: 400px;
+    }
 
     &.show {
       transform: translateY(0);

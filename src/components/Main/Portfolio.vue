@@ -83,7 +83,7 @@ export default {
             supplement: [
               "大学のオンライン授業で「写真を撮ってPDFにして提出」という課題が増え、機械に弱い友達によく変換を頼まれていたので、1人でできるように作りました。",
             ],
-            used: ["PDFMake(ライブラリ)"],
+            used: ["PDFMake"],
             image: "ipc.png",
             github: "image-pdf-converter",
           },
@@ -219,10 +219,8 @@ export default {
 
 .portfolio {
   &__wrapper {
-    @include mq("pc") {
-      display: flex;
-      flex-wrap: wrap;
-    }
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 </style>
