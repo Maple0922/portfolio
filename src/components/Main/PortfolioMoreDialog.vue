@@ -1,19 +1,38 @@
 <template>
   <div class="portfolio__dialog" @click="closeDialog">
     <div class="portfolio__dialog__container">
-      <div class="portfolio__dialog__top"></div>
-      <p class="portfolio__dialog__title">{{ portfolioItem.title }}</p>
-      <div class="portfolio__dialog__content">
-        <p class="portfolio__dialog__content__description">
-          {{ portfolioItem.description }}
-        </p>
-        <p
-          class="portfolio__dialog__content__supplement"
-          v-for="(sup, key) in portfolioItem.supplement"
-          :key="key"
-        >
-          {{ sup }}
-        </p>
+      <div class="portfolio__dialog__images">
+        <div class="portfolio__dialog__images__show">
+          <img
+            class="portfolio__dialog__images__show__item"
+            :src="require(`@/assets/images/photo/${portfolioItem.thumbnail}`)"
+            :alt="portfolioItem.thumbnail"
+          />
+        </div>
+        <div class="portfolio__dialog__images__list">
+          <img
+            class="portfolio__dialog__images__list__item"
+            v-for="(image, key) in portfolioItem.images"
+            :src="require(`@/assets/images/photo/${image}`)"
+            :alt="image"
+            :key="key"
+          />
+        </div>
+      </div>
+      <div class="portfolio__dialog__contents">
+        <p class="portfolio__dialog__title">{{ portfolioItem.title }}</p>
+        <div class="portfolio__dialog__content">
+          <p class="portfolio__dialog__content__description">
+            {{ portfolioItem.description }}
+          </p>
+          <p
+            class="portfolio__dialog__content__supplement"
+            v-for="(sup, key) in portfolioItem.supplement"
+            :key="key"
+          >
+            {{ sup }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -21,7 +40,7 @@
 
 <script>
 export default {
-  name: "PortfolioDialog",
+  name: "PortfolioMoreDialog",
   props: ["portfolioItem"],
 
   methods: {
@@ -64,9 +83,55 @@ export default {
 
     @include mq("pc") {
       padding: 16px 20px;
+      display: flex;
+      justify-content: center;
     }
     @include mq("sp") {
       padding: 12px 16px;
+    }
+  }
+
+  &__images {
+    display: block;
+    border: 1px solid black;
+    @include mq("pc") {
+      width: 50%;
+    }
+    @include mq("sp") {
+      width: 100%;
+    }
+
+    &__show {
+      width: 100%;
+      &__item {
+        width: 100%;
+        object-fit: cover;
+        @include mq("pc") {
+          height: 400px;
+        }
+        @include mq("sp") {
+          height: 200px;
+        }
+      }
+    }
+
+    &__list {
+      width: 100%;
+      &__item {
+        width: 33%;
+        height: 133px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__contents {
+    border: 1px solid black;
+    @include mq("pc") {
+      width: 50%;
+    }
+    @include mq("sp") {
+      width: 100%;
     }
   }
 
