@@ -8,13 +8,13 @@
       <p class="main__container__title--en">Portfolio</p>
       <p class="main__container__title--ja">制作実績</p>
     </h2>
-    <h3 class="main__container__subtitle">個人開発</h3>
+    <h3 class="portfolio__subtitle">個人</h3>
     <div class="portfolio__wrapper personal">
       <template v-for="(item, key) in portfolio.personal">
         <PortfolioCard :portfolioItem="item" :key="key" @showMore="showMore" />
       </template>
     </div>
-    <h3 class="main__container__subtitle">実務</h3>
+    <h3 class="portfolio__subtitle">実務</h3>
     <div class="portfolio__wrapper practical">
       <template v-for="(item, key) in portfolio.practical">
         <PortfolioCard :portfolioItem="item" :key="key" @showMore="showMore" />
@@ -43,7 +43,8 @@ export default {
               "Vue CLIで作りました。アニメーションに絶対jQueryを使わないよう意識しました。",
             ],
             used: ["Vue.js"],
-            image: "pf.png",
+            thumbnail: "pf.png",
+            images: ["pf.png", "pf.png", "pf.png"],
             github: "portfolio",
           },
           {
@@ -59,7 +60,8 @@ export default {
               "現在もサークル内で使われています。",
             ],
             used: ["PHP", "SQLite"],
-            image: "by.png",
+            thumbnail: "by.png",
+            images: ["by.png", "by.png", "by.png"],
             github: "ksre2",
           },
           {
@@ -73,7 +75,8 @@ export default {
               "現在もサークル内で使われています。",
             ],
             used: ["jQuery"],
-            image: "ttm.png",
+            thumbnail: "ttm.png",
+            images: ["ttm.png", "ttm.png", "ttm.png"],
             github: "time-table-maker",
           },
           {
@@ -84,11 +87,12 @@ export default {
               "大学のオンライン授業で「写真を撮ってPDFにして提出」という課題が増え、機械に弱い友達によく変換を頼まれていたので、1人でできるように作りました。",
             ],
             used: ["PDFMake"],
-            image: "ipc.png",
+            thumbnail: "ipc.png",
+            images: ["ipc.png", "ipc.png", "ipc.png"],
             github: "image-pdf-converter",
           },
           {
-            title: "oh-o!Meiji サーバーエラーbot",
+            title: "Oh-o!Meiji サーバーエラーbot",
             date: "2020-5",
             description:
               "大学のポータルサイトがエラーを起こした際にツイートでお知らせしてくれるbotです。",
@@ -98,7 +102,8 @@ export default {
               "このbotを作った直後にサーバーが強化され、全く落ちなくなりました。",
             ],
             used: ["PHP", "cron"],
-            image: "seb.png",
+            thumbnail: "seb.png",
+            images: ["seb.png", "seb.png", "seb.png"],
             github: "detect-error-bot",
           },
           {
@@ -112,7 +117,8 @@ export default {
               "Vueの双方向データバインディングを活かしたWebアプリを作りたくなって作りました。",
             ],
             used: ["Vue.js"],
-            image: "vgc.png",
+            thumbnail: "vgc.png",
+            images: ["vgc.png", "vgc.png", "vgc.png"],
             github: "vue-gamble-calculator",
           },
         ],
@@ -124,7 +130,8 @@ export default {
               "デザインカンプを元に1枚のLPのコーディング、レスポンシブ対応を行いました。",
             supplement: [],
             used: ["Sass", "jQuery"],
-            image: "lp.png",
+            thumbnail: "lp.png",
+            images: ["lp.png", "lp.png", "lp.png"],
           },
           {
             title: "社内ブログの枠組み実装",
@@ -133,7 +140,8 @@ export default {
               "社内の技術ブログの枠組みを、hugoという静的サイトジェネレータのテーマをカスタマイズして作りました。",
             supplement: [""],
             used: ["hugo"],
-            image: "bl.png",
+            thumbnail: "bl.png",
+            images: ["bl.png", "bl.png", "bl.png"],
           },
           {
             title: "モバイルオーダーシステムのフロントエンド開発",
@@ -144,7 +152,8 @@ export default {
               "初のチーム開発、中規模アプリの開発で、GithubとSlackを軸にしたフルリモートでの開発を経験しました。",
             ],
             used: ["Angular"],
-            image: "mos.png",
+            thumbnail: "mos.png",
+            images: ["mos.png", "mos.png", "mos.png"],
           },
           {
             title: "新卒向け就活サービスの開発",
@@ -155,7 +164,8 @@ export default {
               "Laravelでの基本的なMVCやCRUDの実装はここで学びました。",
             ],
             used: ["Laravel"],
-            image: "tc.png",
+            thumbnail: "tc.png",
+            images: ["tc.png", "tc.png", "tc.png"],
           },
           {
             title: "大会運営者支援システムの開発",
@@ -166,7 +176,8 @@ export default {
               "LaravelでCRUDやマルチログイン、その他外部ライブラリなどを用いて独自の機能の実装をしました。",
             ],
             used: ["Laravel"],
-            image: "tw.png",
+            thumbnail: "tw.png",
+            images: ["tw.png", "tw.png", "tw.png"],
           },
         ],
       },
@@ -185,7 +196,7 @@ export default {
     handleScroll() {
       if (!this.show) {
         var top = this.$el.getBoundingClientRect().top;
-        this.show = top < window.innerHeight - 300;
+        this.show = top < window.innerHeight - 150;
       }
     },
 
@@ -203,24 +214,59 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/import";
 
-.main__container__subtitle {
-  width: 100%;
-  text-align: center;
-  padding-bottom: 4px;
-  @include mq("pc") {
-    margin-bottom: 32px;
-    font-size: 22px;
-  }
-  @include mq("sp") {
-    margin-bottom: 20px;
-    font-size: 17px;
-  }
-}
-
 .portfolio {
+  &__subtitle {
+    width: 120px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 4px;
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 30px;
+      height: 1px;
+    }
+    @include mq("pc") {
+      margin-bottom: 32px;
+      font-size: 22px;
+      &::before,
+      &::after {
+        top: 44%;
+        border-top: 2px solid $light-gray;
+      }
+      &::before {
+        left: 120px;
+      }
+      &::after {
+        right: 120px;
+      }
+    }
+    @include mq("tab") {
+      font-size: 20px;
+    }
+    @include mq("sp") {
+      margin-bottom: 10px;
+      font-size: 16px;
+      &::before,
+      &::after {
+        top: 40%;
+        border-top: 1px solid $light-gray;
+      }
+      &::before {
+        left: 100px;
+      }
+      &::after {
+        right: 100px;
+      }
+    }
+  }
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 80px;
   }
 }
 </style>
