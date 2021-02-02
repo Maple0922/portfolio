@@ -75,30 +75,36 @@ export default {
   }
 
   &__container {
-    max-width: 1000px;
     width: 84%;
     margin: 0 auto;
     background: $main-background;
     border-radius: 4px;
+    display: flex;
+    overflow: hidden;
 
     @include mq("pc") {
-      padding: 16px 20px;
-      display: flex;
       justify-content: center;
+      flex-direction: row-reverse;
+      max-width: 800px;
     }
     @include mq("sp") {
-      padding: 12px 16px;
+      flex-direction: column;
+      max-width: 360px;
     }
   }
 
   &__images {
     display: block;
-    border: 1px solid black;
+    font-size: 0;
+    border-radius: 4px 4px 0 0;
+
     @include mq("pc") {
       width: 50%;
+      border-left: 1px solid $super-light-gray;
     }
     @include mq("sp") {
       width: 100%;
+      border-top: 1px solid $super-light-gray;
     }
 
     &__show {
@@ -106,11 +112,14 @@ export default {
       &__item {
         width: 100%;
         object-fit: cover;
+        border-bottom: 1px solid $white;
         @include mq("pc") {
-          height: 400px;
+          height: 42vw;
+          max-height: 400px;
         }
         @include mq("sp") {
-          height: 200px;
+          height: 84vw;
+          max-height: 360px;
         }
       }
     }
@@ -118,20 +127,32 @@ export default {
     &__list {
       width: 100%;
       &__item {
-        width: 33%;
-        height: 133px;
         object-fit: cover;
+        cursor: pointer;
+        border: 3px solid $super-light-gray;
+        &.selected {
+          border: 3px solid orange;
+        }
+        @include mq("pc") {
+          width: 80px;
+          height: 80px;
+        }
+        @include mq("sp") {
+          width: 60px;
+          height: 60px;
+        }
       }
     }
   }
 
   &__contents {
-    border: 1px solid black;
     @include mq("pc") {
+      padding: 16px 20px;
       width: 50%;
     }
     @include mq("sp") {
       width: 100%;
+      padding: 12px 16px;
     }
   }
 
