@@ -5,7 +5,7 @@
         <div class="portfolio__dialog__images__show">
           <img
             class="portfolio__dialog__images__show__item"
-            :src="require(`@/assets/images/photo/${portfolioItem.thumbnail}`)"
+            :src="withImage.thumbnail"
             :alt="portfolioItem.thumbnail"
           />
         </div>
@@ -13,7 +13,7 @@
           <img
             class="portfolio__dialog__images__list__item"
             v-for="(image, key) in portfolioItem.images"
-            :src="require(`@/assets/images/photo/${image}`)"
+            :src="getImagePath(image)"
             :alt="image"
             :key="key"
           />
@@ -46,6 +46,20 @@ export default {
   methods: {
     closeDialog() {
       this.$parent.showMoreDialog = false;
+    },
+    getImagePath(imageName) {
+      return require("@/assets/images/photo/" + imageName);
+    },
+  },
+
+  computed: {
+    withImage() {
+      return {
+        ...this.portfolioItem,
+        thumbnail:
+          this.portfolioItem.thumbnail &&
+          require(`@/assets/images/photo/${this.portfolioItem.thumbnail}`),
+      };
     },
   },
 };
