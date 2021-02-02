@@ -5,7 +5,7 @@
       <p class="header__caption" :class="{ show: showCaption }">
         - Web Engineer -
       </p>
-      <div class="header__links" :class="{ show: showLinks }">
+      <!-- <div class="header__links" :class="{ show: showLinks }">
         <a
           class="header__link"
           v-for="(link, key) in links"
@@ -14,7 +14,7 @@
           v-smooth-scroll
           >{{ link.name }}</a
         >
-      </div>
+      </div> -->
     </div>
   </header>
 </template>
@@ -30,7 +30,7 @@ export default {
     return {
       showTitle: false,
       showCaption: false,
-      showLinks: false,
+      // showLinks: false,
       links: [
         {
           name: "Profile",
@@ -52,11 +52,11 @@ export default {
       this.showTitle = true;
       setTimeout(() => {
         this.showCaption = true;
-        setTimeout(() => {
-          this.showLinks = true;
-        }, 300);
-      }, 300);
-    }, 500);
+        // setTimeout(() => {
+        //   this.showLinks = true;
+        // }, 300);
+      }, 100);
+    }, 200);
   },
 };
 </script>
