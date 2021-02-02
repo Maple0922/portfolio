@@ -25,7 +25,7 @@ export default {
     handleScroll() {
       if (!this.show) {
         var top = this.$el.getBoundingClientRect().top;
-        this.show = top < window.innerHeight - 300;
+        this.show = top < window.innerHeight - 150;
       }
     },
   },

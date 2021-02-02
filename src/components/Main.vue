@@ -97,6 +97,7 @@ export default {
 
       @include mq("sp") {
         margin-bottom: 30px;
+        margin-left: 30px;
       }
 
       &--ja {

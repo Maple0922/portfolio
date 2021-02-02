@@ -199,7 +199,7 @@ export default {
     handleScroll() {
       if (!this.show) {
         var top = this.$el.getBoundingClientRect().top;
-        this.show = top < window.innerHeight - 300;
+        this.show = top < window.innerHeight - 150;
       }
     },
   },
@@ -251,7 +251,7 @@ export default {
       font-size: 18px;
     }
     @include mq("sp") {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 

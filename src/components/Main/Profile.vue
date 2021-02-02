@@ -68,20 +68,13 @@ export default {
     };
   },
 
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
+  mounted() {
+    setTimeout(() => {
+      this.show = true;
+    }, 1000);
   },
 
   methods: {
-    handleScroll() {
-      if (!this.show) {
-        var top = this.$el.getBoundingClientRect().top;
-        this.show = top < window.innerHeight - 300;
-      }
-    },
     calcAge() {
       const myBirthDay = {
         year: 1999,
@@ -164,7 +157,8 @@ export default {
     }
 
     @include mq("sp") {
-      width: 100%;
+      width: 90%;
+      min-width: 300px;
     }
 
     &__item {
