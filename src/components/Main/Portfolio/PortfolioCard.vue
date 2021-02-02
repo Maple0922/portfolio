@@ -4,14 +4,14 @@
     <div class="portfolio__card__top">
       <img
         class="portfolio__card__image"
-        :src="require(`@/assets/images/photo/${portfolioItem.image}`)"
-        :alt="portfolioItem.image"
+        :src="require(`@/assets/images/photo/${portfolioItem.thumbnail}`)"
+        :alt="portfolioItem.thumbnail"
       />
     </div>
     <div class="portfolio__card__bottom">
       <h4 class="portfolio__card__title">{{ portfolioItem.title }}</h4>
       <span class="portfolio__card__date">{{ portfolioItem.date }}</span>
-      <p class="portfolio__card__description" v-if="!sp">
+      <p class="portfolio__card__description">
         {{ portfolioItem.description }}
       </p>
       <hr class="portfolio__card__border" />
@@ -67,9 +67,6 @@ export default {
       height: 500px;
       width: calc(33.3% - 30px);
       margin: 0 15px 30px;
-      &:last-child {
-        margin-bottom: 80px;
-      }
     }
     @include mq("tab") {
       width: calc(33.3% - 30px);
@@ -144,7 +141,7 @@ export default {
         padding: 0 12px;
       }
       @include mq("sp") {
-        font-size: 10px;
+        display: none;
       }
     }
     &__border {
@@ -229,7 +226,6 @@ export default {
     }
 
     &__description {
-      display: block;
       margin-bottom: 10px;
     }
 
