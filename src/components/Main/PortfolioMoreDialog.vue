@@ -61,6 +61,9 @@
               />
             </a>
           </p>
+          <p class="portfolio__dialog__info__note" v-if="!portfolioItem.github">
+            ※画像はイメージです。
+          </p>
         </div>
       </div>
     </div>
@@ -117,7 +120,7 @@ export default {
   left: 0;
   background: #0009;
   opacity: 0;
-  transition: 0.2s;
+  transition: 0.3s;
   pointer-events: none;
 
   &--show {
@@ -205,6 +208,12 @@ export default {
         width: 100%;
         height: 100%;
       }
+    }
+    &__note {
+      color: $gray;
+      display: inline-block;
+      width: 100%;
+      text-align: right;
     }
   }
 
@@ -334,6 +343,14 @@ export default {
             transform: scale(1.1);
           }
         }
+      }
+    }
+    &__note {
+      @include mq("pc") {
+        font-size: 13px;
+      }
+      @include mq("sp") {
+        font-size: 10px;
       }
     }
   }
