@@ -172,6 +172,8 @@ export default {
       }
     }
   }
+
+  // common
   &__card {
     background: transparentize($white, 0.4);
     border-radius: 4px;
