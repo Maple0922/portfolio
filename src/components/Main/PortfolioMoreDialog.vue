@@ -45,6 +45,22 @@
               >{{ tech }}</span
             >
           </p>
+          <p
+            class="portfolio__dialog__info__github"
+            v-if="portfolioItem.github"
+          >
+            <a
+              class="portfolio__dialog__info__github__link"
+              :href="getGithubUrl(portfolioItem.github)"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <component
+                class="portfolio__dialog__info__github__icon"
+                :is="'GithubBlackSvg'"
+              />
+            </a>
+          </p>
         </div>
       </div>
     </div>
@@ -52,6 +68,8 @@
 </template>
 
 <script>
+import GithubBlackSvg from "@/assets/images/svg/github_black.svg";
+
 export default {
   name: "PortfolioMoreDialog",
   props: ["portfolioItem"],
@@ -63,6 +81,9 @@ export default {
     getImagePath(imageName) {
       return require("@/assets/images/photo/" + imageName);
     },
+    getGithubUrl(repoName) {
+      return `https://github.com/Maple0922/${repoName}`;
+    },
   },
 
   computed: {
@@ -73,6 +94,10 @@ export default {
           require(`@/assets/images/photo/${this.portfolioItem.thumbnail}`),
       };
     },
+  },
+
+  components: {
+    GithubBlackSvg,
   },
 };
 </script>
@@ -149,7 +174,6 @@ export default {
     display: inline-block;
     width: 100%;
     text-align: right;
-    line-height: 0.5;
     font-weight: bold;
   }
 
@@ -167,6 +191,19 @@ export default {
         background: $super-light-gray;
         border-radius: 3px;
         text-align: center;
+      }
+    }
+    &__github {
+      width: 100%;
+      text-align: right;
+      &__link {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+      }
+      &__icon {
+        width: 100%;
+        height: 100%;
       }
     }
   }
@@ -245,11 +282,12 @@ export default {
     @include mq("pc") {
       font-size: 14px;
       padding-right: 6px;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
     }
     @include mq("sp") {
       font-size: 11px;
-      margin-bottom: 10px;
+      margin-bottom: 4px;
+      padding-right: 8px;
     }
   }
 
@@ -285,6 +323,17 @@ export default {
       }
       @include mq("sp") {
         font-size: 11px;
+      }
+    }
+    &__github {
+      &__link {
+        @include mq("pc") {
+          transition: 0.3s;
+          &:hover {
+            opacity: 0.6;
+            transform: scale(1.1);
+          }
+        }
       }
     }
   }
