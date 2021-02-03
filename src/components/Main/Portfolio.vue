@@ -44,7 +44,7 @@ export default {
             ],
             used: ["Vue.js"],
             thumbnail: "pf.png",
-            images: ["pf.png", "pf.png", "pf.png"],
+            images: ["pf.png", "by.png", "ttm.png"],
             github: "portfolio",
           },
           {
@@ -59,7 +59,7 @@ export default {
             ],
             used: ["PHP", "SQLite"],
             thumbnail: "by.png",
-            images: ["by.png", "by.png", "by.png"],
+            images: ["by.png", "pf.png", "ttm.png"],
             github: "ksre2",
           },
           {
@@ -74,7 +74,7 @@ export default {
             ],
             used: ["jQuery"],
             thumbnail: "ttm.png",
-            images: ["ttm.png", "ttm.png", "ttm.png"],
+            images: ["ttm.png", "pf.png", "by.png"],
             github: "time-table-maker",
           },
           {
@@ -86,7 +86,7 @@ export default {
             ],
             used: ["PDFMake"],
             thumbnail: "ipc.png",
-            images: ["ipc.png", "ipc.png", "ipc.png"],
+            images: ["ipc.png", "by.png", "pf.png"],
             github: "image-pdf-converter",
           },
           {
@@ -101,7 +101,7 @@ export default {
             ],
             used: ["PHP", "cron"],
             thumbnail: "seb.png",
-            images: ["seb.png", "seb.png", "seb.png"],
+            images: ["seb.png", "ipc.png", "vgc.png", "pf.png"],
             github: "detect-error-bot",
           },
           {
@@ -116,7 +116,7 @@ export default {
             ],
             used: ["Vue.js"],
             thumbnail: "vgc.png",
-            images: ["vgc.png", "vgc.png", "vgc.png"],
+            images: ["vgc.png", "by.png", "pf.png"],
             github: "vue-gamble-calculator",
           },
         ],
