@@ -54,9 +54,7 @@ export default {
               "自分の所属しているサークルで使っている部室の利用時間予約サイトです。",
             supplement: [
               "今までメーリングリストにベタ書きでしていた予約作業を簡単に行えるようにするため作りました。",
-              "手順を簡潔にすることに重点を置き、ログインを設けずに最低限のパスコードで使えるようにしました。",
               "予約･変更･削除時にはLINE、自分のSlackに通知が飛ぶようにし、ログが追えるようにしました。",
-              "まだフレームワークを知らず、全て生のPHPで書きました。",
               "現在もサークル内で使われています。",
             ],
             used: ["PHP", "SQLite"],
@@ -131,7 +129,7 @@ export default {
             supplement: [],
             used: ["Sass", "jQuery"],
             thumbnail: "lp.png",
-            images: ["lp.png", "lp.png", "lp.png"],
+            images: ["lp.png"],
           },
           {
             title: "社内ブログの枠組み実装",
@@ -141,7 +139,7 @@ export default {
             supplement: [""],
             used: ["hugo"],
             thumbnail: "bl.png",
-            images: ["bl.png", "bl.png", "bl.png"],
+            images: ["bl.png"],
           },
           {
             title: "モバイルオーダーシステムのフロントエンド開発",
@@ -153,7 +151,7 @@ export default {
             ],
             used: ["Angular"],
             thumbnail: "mos.png",
-            images: ["mos.png", "mos.png", "mos.png"],
+            images: ["mos.png"],
           },
           {
             title: "新卒向け就活サービスの開発",
@@ -165,7 +163,7 @@ export default {
             ],
             used: ["Laravel"],
             thumbnail: "tc.png",
-            images: ["tc.png", "tc.png", "tc.png"],
+            images: ["tc.png"],
           },
           {
             title: "大会運営者支援システムの開発",
@@ -177,7 +175,7 @@ export default {
             ],
             used: ["Laravel"],
             thumbnail: "tw.png",
-            images: ["tw.png", "tw.png", "tw.png"],
+            images: ["tw.png"],
           },
         ],
       },
