@@ -21,6 +21,7 @@
       </div>
       <div class="portfolio__dialog__text">
         <p class="portfolio__dialog__title">{{ portfolioItem.title }}</p>
+        <span class="portfolio__dialog__date">{{ portfolioItem.date }}</span>
         <div class="portfolio__dialog__content">
           <p class="portfolio__dialog__content__description">
             {{ portfolioItem.description }}
@@ -135,8 +136,26 @@ export default {
     }
   }
 
+  &__text {
+    font-size: 0;
+  }
+
   &__title {
     font-weight: bold;
+  }
+
+  &__date {
+    color: $light-gray;
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    line-height: 0.5;
+    font-weight: bold;
+  }
+
+  &__border {
+    width: 104%;
+    transform: translateX(-2%);
   }
 
   &__info {
@@ -216,20 +235,30 @@ export default {
   &__title {
     @include mq("pc") {
       font-size: 20px;
-      margin-bottom: 16px;
     }
     @include mq("sp") {
       font-size: 16px;
-      margin-bottom: 12px;
+    }
+  }
+
+  &__date {
+    @include mq("pc") {
+      font-size: 14px;
+      padding-right: 6px;
+      margin-bottom: 16px;
+    }
+    @include mq("sp") {
+      font-size: 11px;
+      margin-bottom: 10px;
     }
   }
 
   &__content {
     @include mq("pc") {
-      margin-bottom: 30px;
+      margin-bottom: 12px;
     }
     @include mq("sp") {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     &__description,
     &__supplement {
@@ -242,8 +271,12 @@ export default {
     }
   }
   &__border {
-    width: 104%;
-    transform: translateX(-2%);
+    @include mq("pc") {
+      margin-bottom: 12px;
+    }
+    @include mq("sp") {
+      margin-bottom: 10px;
+    }
   }
   &__info {
     &__used {
