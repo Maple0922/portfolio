@@ -1,22 +1,24 @@
 <template>
-  <div class="portfolio__dialog" @click="closeDialog">
+  <div class="portfolio__dialog">
+    <div class="portfolio__dialog__background" @click="closeDialog"></div>
     <div class="portfolio__dialog__container">
       <div class="portfolio__dialog__images">
         <div class="portfolio__dialog__images__show">
           <img
-            class="portfolio__dialog__images__show__item"
+            class="portfolio__dialog__images__show__item js-thumbnail"
             :src="withImage.thumbnail"
             :alt="portfolioItem.thumbnail"
           />
         </div>
         <div class="portfolio__dialog__images__list">
           <img
-            class="portfolio__dialog__images__list__item"
-            :class="{ pc: isPC }"
+            class="portfolio__dialog__images__list__item js-image"
+            :class="{ pc: isPC, selected: !key }"
             v-for="(image, key) in portfolioItem.images"
             :src="getImagePath(image)"
             :alt="image"
             :key="key"
+            @click="switchImage"
           />
         </div>
       </div>
@@ -87,12 +89,28 @@ export default {
   methods: {
     closeDialog() {
       this.$parent.showMoreDialog = false;
+      setTimeout(() => {
+        const nowSelected = document.querySelector(".selected");
+        nowSelected.classList.remove("selected");
+        const firstImage = document.querySelector(".js-image");
+        firstImage.classList.add("selected");
+        const thumbnail = document.querySelector(".js-thumbnail");
+        thumbnail.src = firstImage.src;
+      }, 300);
     },
     getImagePath(imageName) {
       return require("@/assets/images/photo/" + imageName);
     },
     getGithubUrl(repoName) {
       return `https://github.com/Maple0922/${repoName}`;
+    },
+    switchImage(e) {
+      const nowSelected = document.querySelector(".selected");
+      nowSelected.classList.remove("selected");
+      const selectedImage = e.target;
+      const thumbnail = document.querySelector(".js-thumbnail");
+      thumbnail.src = selectedImage.src;
+      selectedImage.classList.add("selected");
     },
     isSP: function () {
       return this.isMobile(window.navigator).any;
@@ -131,7 +149,6 @@ export default {
   align-items: center;
   top: 0;
   left: 0;
-  background: #0009;
   opacity: 0;
   transition: 0.3s;
   pointer-events: none;
@@ -142,6 +159,16 @@ export default {
   }
 
   // common
+  &__background {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #0009;
+    z-index: 7000;
+  }
+
   &__container {
     width: 84%;
     margin: 0 auto;
@@ -149,6 +176,8 @@ export default {
     border-radius: 4px;
     display: flex;
     overflow: hidden;
+    position: relative;
+    z-index: 8000;
   }
   &__images {
     display: block;
@@ -160,7 +189,7 @@ export default {
       &__item {
         width: 100%;
         object-fit: cover;
-        border-bottom: 1px solid $white;
+        border-bottom: 1px solid $super-light-gray;
       }
     }
 
@@ -169,17 +198,15 @@ export default {
       &__item {
         object-fit: cover;
         cursor: pointer;
-        border-right: 1px solid $gray;
-        border-bottom: 1px solid $gray;
-        border-top: 1px solid $gray;
+        border: 2px solid transparent;
         &.pc {
-          transition: 0.3s;
+          transition: 0.1s;
           &:hover {
-            opacity: 0.4;
+            opacity: 0.9;
           }
         }
         &.selected {
-          border: 1px solid orange;
+          border: 2px solid orange;
         }
       }
     }
