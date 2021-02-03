@@ -12,6 +12,7 @@
         <div class="portfolio__dialog__images__list">
           <img
             class="portfolio__dialog__images__list__item"
+            :class="{ pc: isPC }"
             v-for="(image, key) in portfolioItem.images"
             :src="getImagePath(image)"
             :alt="image"
@@ -72,10 +73,16 @@
 
 <script>
 import GithubBlackSvg from "@/assets/images/svg/github_black.svg";
+import isMobile from "ismobilejs";
 
 export default {
   name: "PortfolioMoreDialog",
   props: ["portfolioItem"],
+  data() {
+    return {
+      isMobile,
+    };
+  },
 
   methods: {
     closeDialog() {
@@ -86,6 +93,12 @@ export default {
     },
     getGithubUrl(repoName) {
       return `https://github.com/Maple0922/${repoName}`;
+    },
+    isSP: function () {
+      return this.isMobile(window.navigator).any;
+    },
+    isPC: function () {
+      return !this.isMobile(window.navigator).any;
     },
   },
 
@@ -156,9 +169,17 @@ export default {
       &__item {
         object-fit: cover;
         cursor: pointer;
-        border: 3px solid $super-light-gray;
+        border-right: 1px solid $gray;
+        border-bottom: 1px solid $gray;
+        border-top: 1px solid $gray;
+        &.pc {
+          transition: 0.3s;
+          &:hover {
+            opacity: 0.4;
+          }
+        }
         &.selected {
-          border: 3px solid orange;
+          border: 1px solid orange;
         }
       }
     }
