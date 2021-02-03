@@ -1,5 +1,5 @@
 <template>
-  <div class="portfolio__card" @click="showMore">
+  <div class="portfolio__card" :class="{ pc: isPC }" @click="showMore">
     <div class="portfolio__card__shadow">MORE</div>
     <div class="portfolio__card__top">
       <img
@@ -49,9 +49,11 @@ export default {
   },
 
   computed: {
-    sp: function () {
-      const userAgent = window.navigator;
-      return this.isMobile(userAgent).any;
+    isSP: function () {
+      return this.isMobile(window.navigator).any;
+    },
+    isPC: function () {
+      return !this.isMobile(window.navigator).any;
     },
   },
 };
@@ -172,6 +174,8 @@ export default {
       }
     }
   }
+
+  // common
   &__card {
     background: transparentize($white, 0.4);
     border-radius: 4px;
@@ -239,14 +243,17 @@ export default {
         text-align: center;
       }
     }
-    &:hover {
-      opacity: 0.6;
-      .portfolio__card__shadow {
-        opacity: 1;
-        z-index: 1000;
-      }
-      .portfolio__card__image {
-        transform: scale(1.1);
+
+    &.pc {
+      &:hover {
+        opacity: 0.6;
+        .portfolio__card__shadow {
+          opacity: 1;
+          z-index: 1000;
+        }
+        .portfolio__card__image {
+          transform: scale(1.1);
+        }
       }
     }
   }
