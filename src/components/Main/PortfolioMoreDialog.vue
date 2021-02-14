@@ -152,6 +152,7 @@ export default {
   opacity: 0;
   transition: 0.3s;
   pointer-events: none;
+  z-index: 7000;
 
   &--show {
     opacity: 1;
@@ -166,7 +167,6 @@ export default {
     top: 0;
     left: 0;
     background: #0009;
-    z-index: 7000;
   }
 
   &__container {
@@ -189,7 +189,7 @@ export default {
       &__item {
         width: 100%;
         object-fit: cover;
-        border-bottom: 1px solid $super-light-gray;
+        border-bottom: 2px solid $super-light-gray;
       }
     }
 
@@ -198,11 +198,11 @@ export default {
       &__item {
         object-fit: cover;
         cursor: pointer;
-        border: 2px solid transparent;
+        border: 2px solid $super-light-gray;
         &.pc {
           transition: 0.1s;
           &:hover {
-            opacity: 0.9;
+            opacity: 0.8;
           }
         }
         &.selected {
@@ -274,7 +274,9 @@ export default {
     }
     @include mq("sp") {
       flex-direction: column;
-      max-width: 360px;
+      max-width: 320px;
+      max-height: vh;
+      overflow-y: scroll;
     }
   }
 
@@ -296,7 +298,7 @@ export default {
         }
         @include mq("sp") {
           height: 84vw;
-          max-height: 360px;
+          max-height: 320px;
         }
       }
     }
