@@ -112,10 +112,10 @@ export default {
       thumbnail.src = selectedImage.src;
       selectedImage.classList.add("selected");
     },
-    isSP: function () {
+    isSP: function() {
       return this.isMobile(window.navigator).any;
     },
-    isPC: function () {
+    isPC: function() {
       return !this.isMobile(window.navigator).any;
     },
   },
@@ -135,8 +135,6 @@ export default {
   },
 };
 </script>
-
-
 
 <style lang="scss" scoped>
 @import "@/assets/scss/import";
@@ -275,7 +273,7 @@ export default {
     @include mq("sp") {
       flex-direction: column;
       max-width: 320px;
-      max-height: vh;
+      max-height: 240vh;
       overflow-y: scroll;
     }
   }
@@ -294,11 +292,11 @@ export default {
       &__item {
         @include mq("pc") {
           height: 42vw;
-          max-height: 400px;
+          max-height: 320px;
         }
         @include mq("sp") {
           height: 84vw;
-          max-height: 320px;
+          max-height: 240px;
         }
       }
     }
