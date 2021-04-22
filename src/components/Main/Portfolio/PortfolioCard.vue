@@ -1,5 +1,9 @@
 <template>
-  <div class="portfolio__card" :class="{ pc: isPC }" @click="showMore">
+  <div
+    class="portfolio__card js-card"
+    :class="{ pc: isPC, sp: isSP }"
+    @click="showMore"
+  >
     <div class="portfolio__card__shadow">MORE</div>
     <div class="portfolio__card__top">
       <img
@@ -55,6 +59,20 @@ export default {
     isPC: function () {
       return !this.isMobile(window.navigator).any;
     },
+  },
+
+  mounted() {
+    if (this.isSP) {
+      const cards = document.getElementsByClassName("js-card");
+      cards.forEach((card) => {
+        card.addEventListener("touchstart", () => {
+          card.classList.add("touched");
+        });
+        card.addEventListener("touchend", () => {
+          card.classList.remove("touched");
+        });
+      });
+    }
   },
 };
 </script>
@@ -246,6 +264,19 @@ export default {
 
     &.pc {
       &:hover {
+        opacity: 0.6;
+        .portfolio__card__shadow {
+          opacity: 1;
+          z-index: 1000;
+        }
+        .portfolio__card__image {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    &.sp {
+      &.touched {
         opacity: 0.6;
         .portfolio__card__shadow {
           opacity: 1;
