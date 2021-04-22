@@ -96,13 +96,18 @@ export default {
               ex: false,
             },
             {
+              name: "Nuxt.js",
+              star: 3,
+              ex: true,
+            },
+            {
               name: "Laravel",
               star: 3,
               ex: true,
             },
             {
               name: "React",
-              star: 2,
+              star: 1,
               ex: false,
             },
             {
@@ -128,6 +133,11 @@ export default {
             {
               name: "Webpack",
               star: 2,
+              ex: true,
+            },
+            {
+              name: "Firebase",
+              star: 3,
               ex: true,
             },
             {
