@@ -62,7 +62,7 @@ export default {
           name: "comment",
           icon: "CommentSvg",
           text:
-            "Webエンジニアを目指している大学生です。身の回りの課題解決･効率化をするWebアプリを開発することが好きです。\n主にやっているのはフロントですが、課題解決のために必要な技術を考え学んでいます。\n大学では軽音サークルに入っており、趣味でギター、ベースを弾いています。\n",
+            "Webエンジニアを目指している大学生です。身の回りの課題解決･効率化をするWebアプリを開発することが好きです。\n主にやっているのはフロントですが、課題解決のために必要な技術を考え学んでいます。\n大学では軽音サークルに入っており、趣味でギター、ベースを弾いています。\n1年の休学(病気のため)、1年の留年により24年卒の予定です。",
         },
       ],
     };
@@ -88,14 +88,26 @@ export default {
         myBirthDay.date
       );
 
-      const y2 = birthDate.getFullYear().toString().padStart(4, "0");
+      const y2 = birthDate
+        .getFullYear()
+        .toString()
+        .padStart(4, "0");
       const m2 = (birthDate.getMonth() + 1).toString().padStart(2, "0");
-      const d2 = birthDate.getDate().toString().padStart(2, "0");
+      const d2 = birthDate
+        .getDate()
+        .toString()
+        .padStart(2, "0");
 
       const today = new Date();
-      const y1 = today.getFullYear().toString().padStart(4, "0");
+      const y1 = today
+        .getFullYear()
+        .toString()
+        .padStart(4, "0");
       const m1 = (today.getMonth() + 1).toString().padStart(2, "0");
-      const d1 = today.getDate().toString().padStart(2, "0");
+      const d1 = today
+        .getDate()
+        .toString()
+        .padStart(2, "0");
 
       const age = Math.floor(
         (Number(y1 + m1 + d1) - Number(y2 + m2 + d2)) / 10000
