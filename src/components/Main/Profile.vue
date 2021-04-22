@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import ProfileImage from "@/assets/images/photo/me.png";
+import ProfileImage from "@/assets/images/photo/me7.png";
 import UserSvg from "@/assets/images/svg/user.svg";
 import CalendarSvg from "@/assets/images/svg/calendar.svg";
 import PinSvg from "@/assets/images/svg/pin.svg";
