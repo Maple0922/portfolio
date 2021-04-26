@@ -196,7 +196,7 @@ export default {
       &__item {
         object-fit: cover;
         cursor: pointer;
-        border: 2px solid $super-light-gray;
+        border: 2px solid $light-gray;
         &.pc {
           transition: 0.1s;
           &:hover {

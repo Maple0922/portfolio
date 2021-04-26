@@ -40,7 +40,7 @@ export default {
             date: "2021-1",
             description: "自分のポートフォリオサイトです。",
             supplement: [
-              "Vue CLIで作りました。アニメーションに絶対jQueryを使わないよう意識しました。",
+              "Vue CLIで作りました。jQuery卒業のため使わないよう意識しました。",
             ],
             used: ["Vue.js"],
             thumbnail: "pf1.png",

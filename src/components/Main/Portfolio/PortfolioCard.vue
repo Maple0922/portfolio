@@ -53,10 +53,10 @@ export default {
   },
 
   computed: {
-    isSP: function () {
+    isSP: function() {
       return this.isMobile(window.navigator).any;
     },
-    isPC: function () {
+    isPC: function() {
       return !this.isMobile(window.navigator).any;
     },
   },
@@ -254,7 +254,7 @@ export default {
     &__used {
       &__item {
         display: inline-block;
-        margin: 0 2px;
+        margin: 0 2px 4px;
         padding: 0 4px;
         background: $super-light-gray;
         border-radius: 3px;

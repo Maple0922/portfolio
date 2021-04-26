@@ -61,7 +61,7 @@ export default {
         },
         {
           enName: "Contact",
-          jaName: "お問い合わせはこちらから",
+          jaName: "お問い合わせ",
         },
       ],
     };
