@@ -23,7 +23,9 @@
 </template>
 
 <script>
-import ProfileImage from "@/assets/images/photo/me7.png";
+import ProfileImage1 from "@/assets/images/photo/me1.jpg";
+import ProfileImage2 from "@/assets/images/photo/me2.jpg";
+import ProfileImage3 from "@/assets/images/photo/me3.jpg";
 import UserSvg from "@/assets/images/svg/user.svg";
 import CalendarSvg from "@/assets/images/svg/calendar.svg";
 import PinSvg from "@/assets/images/svg/pin.svg";
@@ -36,7 +38,7 @@ export default {
   data() {
     return {
       show: false,
-      profileImage: ProfileImage,
+      profileImage: ProfileImage1,
       profiles: [
         {
           name: "user",
@@ -69,12 +71,30 @@ export default {
   },
 
   mounted() {
+    this.getProfileImage();
     setTimeout(() => {
       this.show = true;
     }, 1000);
   },
 
   methods: {
+    getProfileImage() {
+      const imageNum = (new Date().getDate() % 3) + 1;
+      switch (imageNum) {
+        case 1:
+          this.profileImage = ProfileImage1;
+          break;
+        case 2:
+          this.profileImage = ProfileImage2;
+          break;
+        case 3:
+          this.profileImage = ProfileImage3;
+          break;
+
+        default:
+          break;
+      }
+    },
     calcAge() {
       const myBirthDay = {
         year: 1999,

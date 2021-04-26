@@ -8,6 +8,7 @@
       :portfolioItem="showItem"
     />
     <Contact />
+    <Footer />
   </main>
 </template>
 
@@ -17,6 +18,7 @@ import Skills from "@/components/Main/Skills.vue";
 import Portfolio from "@/components/Main/Portfolio.vue";
 import PortfolioMoreDialog from "@/components/Main/PortfolioMoreDialog";
 import Contact from "@/components/Main/Contact.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "Main",
@@ -41,6 +43,7 @@ export default {
     Portfolio,
     PortfolioMoreDialog,
     Contact,
+    Footer,
   },
 };
 </script>
@@ -50,7 +53,6 @@ export default {
 @import "@/assets/scss/reset";
 
 .main {
-  height: 500vh;
   line-height: 1.8;
   background: $main-background;
   text-align: left;
