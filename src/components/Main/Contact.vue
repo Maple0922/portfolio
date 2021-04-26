@@ -4,10 +4,27 @@
       <p class="main__container__title--en">Contact</p>
       <p class="main__container__title--ja">お問い合わせ</p>
     </h2>
+    <div class="main__container__content">
+      <a
+        href="https://github.com/Maple0922"
+        class="main__container__content__link"
+        target="_blank"
+      >
+        <component
+          class="main__container__content__github"
+          :is="'GithubBlackSvg'"
+        />
+      </a>
+      <p class="main__container__content__message">
+        お問い合わせはGithubに記載のメールアドレスよりお願い致します。
+      </p>
+    </div>
   </section>
 </template>
 
 <script>
+import GithubBlackSvg from "@/assets/images/svg/github_black.svg";
+
 export default {
   name: "Contact",
   data() {
@@ -29,9 +46,51 @@ export default {
       }
     },
   },
+  components: {
+    GithubBlackSvg,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/import";
+
+.main__container {
+  &__content {
+    padding: 40px 0;
+    text-align: center;
+    &__link {
+      display: inline-block;
+      margin-bottom: 32px;
+      transition: 0.3s;
+
+      @include mq("pc") {
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+    &__github {
+      @include mq("pc") {
+        width: 64px;
+        height: 64px;
+      }
+
+      @include mq("sp") {
+        width: 48px;
+        height: 48px;
+      }
+    }
+    &__message {
+      padding: 0 12px;
+      @include mq("pc") {
+        font-size: 15px;
+      }
+
+      @include mq("sp") {
+        font-size: 13px;
+      }
+    }
+  }
+}
 </style>
