@@ -82,12 +82,13 @@ export default {
       }
     }
     &__message {
-      padding: 0 12px;
       @include mq("pc") {
+        padding: 0 12px;
         font-size: 15px;
       }
 
       @include mq("sp") {
+        padding: 0 36px;
         font-size: 13px;
       }
     }
