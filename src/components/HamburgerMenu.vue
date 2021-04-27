@@ -14,14 +14,14 @@
         </li>
       </ul>
       <div class="sns">
-        <!-- <a
+        <a
           class="sns__link"
-          href="https://twitter.com/Fool_Maple"
+          href="https://resume.id/foolmaple"
           rel="noreferrer"
           target="_blank"
         >
-          <component class="sns__icon twitter" :is="'TwitterSvg'" />
-        </a> -->
+          <component class="sns__icon resume" :is="'ResumeSvg'" />
+        </a>
         <a
           class="sns__link"
           href="https://github.com/Maple0922"
@@ -38,7 +38,7 @@
 <script>
 import Vue from "vue";
 import VueSmoothScroll from "vue-smooth-scroll";
-// import TwitterSvg from "@/assets/images/svg/twitter.svg";
+import ResumeSvg from "@/assets/images/svg/resume.svg";
 import GithubWhiteSvg from "@/assets/images/svg/github_white.svg";
 Vue.use(VueSmoothScroll);
 
@@ -76,7 +76,7 @@ export default {
   },
 
   components: {
-    // TwitterSvg,
+    ResumeSvg,
     GithubWhiteSvg,
   },
 };
